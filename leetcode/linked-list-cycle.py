@@ -5,11 +5,11 @@ class ListNode(object):
     def __init__(self, x: int):
         self.val = x
         self.next = None
-        self.count = 0
+
 
 class Solution(object):
-    def __init__(self) :
-        self.store= {}
+    def __init__(self):
+        self.store = {}
 
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         """
