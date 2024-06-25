@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find ./leetcode/ -name *.py -type f | grep -v '__init__.py' | wc -l
+find ./leetcode/*.py -type f | grep -c -v '__init__.py'
