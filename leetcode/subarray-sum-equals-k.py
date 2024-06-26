@@ -4,12 +4,16 @@ from typing import List
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         count = 0
-        length = len(nums)
-        for i in range(1, 2**length + 1):
-            sum = 0
-            for j in range(length):
-                if i & 1 << j != 0:
-                    sum += nums[j]
-            if sum == k:
-                count += 1
+        s = 0
+        d = {0: 1}
+
+        for n in nums:
+            s += n
+            if s - k in d:
+                count += d[s - k]
+
+            if s not in d:
+                d[s] = 1
+            else:
+                d[s] += 1
         return count
